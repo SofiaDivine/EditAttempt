@@ -18,7 +18,6 @@ let days = [
   "Saturday",
 ];
 let day = days[nowDate.getDay()];
-
 nowTime.innerHTML = day + ", " + nowHour + ":" + nowMinutes;
 
 function displayForecast(response) {
@@ -42,6 +41,7 @@ function displayForecast(response) {
   forecastHTML = forecastHTML + `</div>`;
   forecastElement.innerHTML = forecastHTML;
 }
+
 function getForecast(coordinates) {
   console.log(coordinates);
   let apiKey = "5c3b44fd3211f47fodb530a25ba78e2t";
@@ -78,7 +78,6 @@ function citySubmit(event) {
   let city = document.querySelector("#searching").value;
   cityNewSearch(city);
 }
-
 let searchCitySubmit = document.querySelector("form");
 searchCitySubmit.addEventListener("submit", citySubmit);
 
@@ -93,10 +92,8 @@ function getCurrentLocation(event) {
   event.preventDefault();
   navigator.geolocation.getCurrentPosition(lookCurrentLocation);
 }
-
 let currentLocationButton = document.querySelector("#location-search");
 currentLocationButton.addEventListener("click", getCurrentLocation);
-
 function displayF(event) {
   event.preventDefault();
   let temperatureElement = document.querySelector("#temperatureMatt");
@@ -106,10 +103,8 @@ function displayF(event) {
   linkF.classList.add("active");
 }
 let celTemp = null;
-
 let linkF = document.querySelector("#degreeF");
 linkF.addEventListener("click", displayF);
-
 function displayC(event) {
   event.preventDefault();
   let temperatureElement = document.querySelector("#temperatureMatt");
@@ -117,6 +112,5 @@ function displayC(event) {
   linkF.classList.remove("active");
   linkC.classList.add("active");
 }
-
 let linkC = document.querySelector("#degreeC");
 linkC.addEventListener("click", displayC);
